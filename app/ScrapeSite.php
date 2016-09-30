@@ -4,7 +4,8 @@ namespace App;
 
 class ScrapeSite {
 
-    protected $html;
+    protected $url;
+    public $html;
 
     /**
      * Named constructor
@@ -13,19 +14,24 @@ class ScrapeSite {
      */
     public static function url($url)
     {
-        $html = file_get_contents($url);
-        return new ScrapeSite($html);
+        try {
+            $html = file_get_contents($url);
+        } catch (Exception $e) {
+            // TODODODODO            
+        }
+        return new ScrapeSite($url, $html);
     }
 
-    public function __construct($html)
+    public function __construct($url, $html)
     {
+        $this->url = $url;
         $this->html = $html;
+        $this->makeAssetLinksAbsolute();
     }
 
-
-    public function print()
+    protected function makeAssetLinksAbsolute()
     {
-        return $this->html;
+        $this->html = str_replace('href="//', 'href="' . $this->url . '/', $this->html);
     }
 
 }

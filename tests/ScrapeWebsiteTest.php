@@ -22,11 +22,15 @@ class ScrapeWebsiteTest extends TestCase
 
     public function test_converts_css_links_with_relative_path_to_absolute()
     {
-        $this->website = str_replace('href="//', 'href="http://example.com/', $this->website);
-        
-        $site = new ScrapeSite($this->website);
+        $site = new ScrapeSite('http://example.com', $this->website);
 
-        $this->assertTrue((bool) strpos($site->print(), 'http://example.com/relative-path.css'));
+        $this->assertTrue((bool) strpos($site->html, 'http://example.com/relative-path.css'));
+    }
+
+    public function test_converts_css_links_with_absolute_path_without_http_or_www()
+    {
+        $site = new ScrapeSite('http://example.com', $this->website);
+        $this->assertTrue((bool) strpos($site->html, 'http://example.com/absolute-path-without-http-www.css'));
     }
 
 }
