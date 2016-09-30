@@ -4,6 +4,8 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+use App\ScrapeSite;
+
 class ScrapeWebsiteTest extends TestCase
 {
     protected $website;
@@ -22,9 +24,9 @@ class ScrapeWebsiteTest extends TestCase
     {
         $this->website = str_replace('href="//', 'href="http://example.com/', $this->website);
         
-        ScrapeSite::url('example.com');
+        $site = new ScrapeSite($this->website);
 
-        $this->assertTrue((bool) strpos($this->website, 'http://example.com/relative-path.css'));
+        $this->assertTrue((bool) strpos($site->print(), 'http://example.com/relative-path.css'));
     }
 
 }
