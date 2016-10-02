@@ -11,6 +11,8 @@
 |
 */
 
+use App\ScrapeSite;
+
 Route::get('/', function () {
     return view('welcome');
 });

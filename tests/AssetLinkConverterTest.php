@@ -13,15 +13,22 @@ class AssetLinkConverterTest extends TestCase
 
     public function test_converts_relative_path()
     {
-        $href = '//style.css';
+        $href = '/style.css';
         $link = AssetLinkConverter::fromRelative($href)->toAbsolute($this->domain);
         $this->assertEquals($this->expected, $link);
     }
 
     public function test_converts_absolute_path_without_http_www()
     {
-        $href = '//example.com/style.css';
+        $href = '//other-domain.com/style.css';
         $link = AssetLinkConverter::fromRelative($href)->toAbsolute($this->domain);
-        $this->assertEquals($this->expected, $link);
+        $this->assertEquals('http://other-domain.com/style.css', $link);
+    }
+
+    public function test_svt_logo()
+    {
+        $src = '/static/svtse-render/images/logotypes/svtlogo-black_v2.png';
+        $link = AssetLinkConverter::fromRelative($src)->toAbsolute('svt.se');
+        $this->assertEquals('http://svt.se'.$src, $link);
     }
 }

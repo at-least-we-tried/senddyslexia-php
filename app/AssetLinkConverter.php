@@ -18,14 +18,12 @@ class AssetLinkConverter {
 
     public function toAbsolute($domain)
     {
-        if (strpos($this->assetLink, $domain)) {
-            $this->assetLink = str_replace('//'.$domain, '', $this->assetLink);
-            return 'http://' . $domain . '/' . $this->assetLink;
+        if (preg_match('/https?:\/\//', $this->assetLink)) return $this->assetLink;
+        
+        if (is_integer(strpos($this->assetLink, '//'))) {
+            return 'http:' . $this->assetLink;
         }
-        if (strpos($this->assetLink, '//') == 0) {
-            $this->assetLink = str_replace('//', 'http://'.$domain.'/', $this->assetLink);
-            return $this->assetLink;
-        }
+        return 'http://' . $domain . $this->assetLink;
     }
 
 }
