@@ -75,9 +75,7 @@ class ScrapeSite {
         $scriptTags = $dom->getElementsByTagName('script');
         if ($scriptTags) {
             foreach ($scriptTags as $scriptTag) {
-                #var_dump($scriptTag);
                 $scriptTag->parentNode->removeChild($scriptTag);
-                #$dom->documentElement->removeChild($scriptTag);
             }
         }
         $this->html = $dom->saveHTML();
