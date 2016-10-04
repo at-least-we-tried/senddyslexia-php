@@ -3,14 +3,7 @@ if (isset($_GET['url'])) :
     $site = App\ScrapeSite::url($_GET['url']);
     echo $site->html;
     ?>
-    <script>
-        (function () {
-            var images = document.querySelectorAll('img');
-            [].forEach.call(images, function (img) {
-                img.style.opacity = '.5';
-            });
-        })();
-    </script>
+    <script src="/js/app.js"></script>
     <?php
 
 else : ?>
