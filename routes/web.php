@@ -13,6 +13,7 @@
 
 use App\ScrapeSite;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'PageController@home', 'as' => 'home']);
+Route::get('/try', ['uses' => 'PageController@try_dyslexia', 'as' => 'try_dyslexia']);
+Route::get('/url', 'UrlController@show');
+Route::get('/what', ['uses' => 'PageController@what', 'as' => 'what']);

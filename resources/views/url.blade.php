@@ -1,4 +1,8 @@
-// shamelessly stolen from geon.github.io/programming/2016/03/03/dsxyliea
+{!! $markup !!}
+
+<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script>
+    // shamelessly stolen from geon.github.io/programming/2016/03/03/dsxyliea
 
 
 "use strict";
@@ -103,5 +107,6 @@ $(function(){
     }
 
 
-    //setInterval(messUpWords, 50);
+    setInterval(messUpWords, 50);
 });
+</script>

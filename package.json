@@ -10,6 +10,8 @@
     "laravel-elixir": "^6.0.0-9",
     "laravel-elixir-vue": "^0.1.4",
     "laravel-elixir-webpack-official": "^1.0.2",
+    "normalize-scss": "^5.0.3",
+    "susy": "^2.2.12",
     "vue": "^1.0.26"
   }
 }

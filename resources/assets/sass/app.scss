@@ -1,0 +1,238 @@
+
+@import "../../../node_modules/normalize-scss/sass/normalize/_import-now.scss";
+@import "../../../node_modules/susy/sass/_susy.scss";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  container : 1024px
+);
+
+$yellow     : #ffda2e;
+$gray       : #ececec;
+$main       : #cf9b29;
+$red        : #ed1a3a;
+$blue       : #005696;
+
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Placeholder selectors
+%vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+html, body {
+  height: 100%; 
+}
+
+body {
+  background: white; 
+  font-family: 'Share Tech Mono', monospace;
+  background: #EFEDE2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body.try {
+  background: #46bbaa;
+  
+}
+
+body.what {
+  background: #f74717; 
+}
+
+.nav {
+  float:left;
+  ul {
+    margin: 0;
+    padding: 10px;
+    li {
+      display: inline;
+      text-transform: uppercase; 
+      padding: 0 5px;
+        font-size: 12px;
+      a {
+        color: black;
+        text-decoration: none;
+        &.active {
+          border-bottom: 1px solid black; 
+        } 
+      }
+    } 
+  } 
+}
+
+body.try .nav ul li a {
+  color: white;
+  &.active {
+          border-bottom: 1px solid white; 
+        } 
+} 
+
+body.try {
+  h1, p {
+    color: white; 
+  } 
+  h1.plask {
+        border-bottom: 3px solid white;
+  }
+}
+
+.soc {
+  float: right;
+  ul {
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+    li {
+          float: right; 
+      a { 
+        img {
+          width: 40px;
+        }
+      }
+    }  
+  }
+  
+}
+  
+  
+
+h1 {
+  margin: 0; 
+    font-weight: normal;
+   font-size: 72px;
+}
+h1.plask
+{
+  display: inline-block;
+    line-height: 0.8em;
+    border-bottom: 3px solid black;
+
+}
+
+h1.plask span {
+     text-shadow: 2px 2px #EFEDE2, -10px 10px #EFEDE2; 
+}
+
+body.try h1.plask span {
+     text-shadow: 2px 2px #4abdac, -10px 10px #4abdac; 
+   
+}
+
+p {
+  line-height: 140%;
+  padding: 0 20px;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.main, .form {
+  clear: both;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+/*  @extend %vertical-align;*/
+padding-top: 100px;
+
+}
+
+button, input[type="submit"], a.btn {
+  background: none;
+  border: 1px solid black; 
+  text-transform: uppercase; 
+  font-size: 22px;
+  padding: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+
+}
+
+body.try {
+  button, input[type="submit"] {
+    border: 1px solid white; 
+    color: white;
+  } 
+}
+
+.form {
+  h1, p, input {
+    color: white;
+  }
+}
+
+input[type="text"] {
+  padding: 20px;
+  width: 80%; 
+  margin-bottom: 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center; 
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline;
+      color: white;
+      a {
+       color: white; 
+       font-size: 12px;
+      }
+    } 
+  } 
+}
+
+@include susy-breakpoint(468px) {
+
+}
+
+@include susy-breakpoint(768px) {
+  .nav {
+    ul {
+    padding: 20px;
+      li {
+        padding: 0 10px;
+        font-size: 16px;
+      }
+    }
+  }
+  input[type="text"] {
+    width: 60%; 
+  }
+  
+  .soc {
+    ul {
+    padding: 10px;
+    }
+  }
+  .col-1 {
+    widht: 50%; 
+  }
+  .col-2 {
+    
+  }
+  
+}
