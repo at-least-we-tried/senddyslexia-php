@@ -1,5 +1,6 @@
 @extends('master')
 
+@section('title', 'Senddyslexia')
 @section('body_class', 'home')
 
 @section('content')

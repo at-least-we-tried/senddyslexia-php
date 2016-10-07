@@ -63,19 +63,21 @@ body.what {
       a {
         color: black;
         text-decoration: none;
-        &.active {
-          border-bottom: 1px solid black; 
-        } 
+      }
+      &.active a {
+       border-bottom: 1px solid black; 
       }
     } 
   } 
 }
 
-body.try .nav ul li a {
-  color: white;
-  &.active {
-          border-bottom: 1px solid white; 
-        } 
+body.try .nav ul li {
+  a {
+    color: white;
+  }
+  &.active a {
+    border-bottom: 1px solid white; 
+  } 
 } 
 
 body.try {

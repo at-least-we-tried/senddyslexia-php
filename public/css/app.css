@@ -423,13 +423,14 @@ body.what {
       .nav ul li a {
         color: black;
         text-decoration: none; }
-        .nav ul li a.active {
-          border-bottom: 1px solid black; }
+      .nav ul li.active a {
+        border-bottom: 1px solid black; }
 
 body.try .nav ul li a {
   color: white; }
-  body.try .nav ul li a.active {
-    border-bottom: 1px solid white; }
+
+body.try .nav ul li.active a {
+  border-bottom: 1px solid white; }
 
 body.try h1, body.try p {
   color: white; }

@@ -1,5 +1,6 @@
 @extends('master')
 
+@section('title', 'What can I do?')
 @section('body_class', 'what')
 
 @section('content')

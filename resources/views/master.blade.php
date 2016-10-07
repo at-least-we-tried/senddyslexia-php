@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
     <head>
-        <title></title>
+        <title>@yield('title')</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <link rel="canonical" href="" />
@@ -47,6 +47,7 @@
         <!-- <<< Robots -->
 
         <meta name="viewport" content="initial-scale=1.0" />
+        <meta charset="utf-8">
         <link rel="shortcut icon" href="images/favicon.ico" />
 
         <!-- Encoding & CSS & JS >>> -->
@@ -67,11 +68,7 @@
     <body class="@yield('body_class')">
         <div class="header">
             <div class="nav">
-                <ul>
-                    <li><a href="{{ route('home') }}" class="active">Home<a/></li>
-                    <li><a href="{{ route('try_dyslexia') }}">Try dyslexia</a></li>
-                    <li><a href="{{ route('what') }}">What can I do?</a></li>
-                </ul>
+                {!! $MenuBar->asUl() !!}
             </div>
 
             <div class="soc">
