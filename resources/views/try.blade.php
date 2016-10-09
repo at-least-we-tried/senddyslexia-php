@@ -13,13 +13,16 @@
         <input class="ani" type="submit" value="Try" />
     </form>
 
+    @if ($popularLinks)
     <div class="footer">
         <h2>Popular links :</h2>
         <ul>
-            <li><a href="">nytimes.com</a> / </li>
-            <li><a href="">nytimes.com</a> / </li>
-            <li><a href="">nytimes.com</a> / </li>
-            <li><a href="">nytimes.com</a> / </li>
+        @foreach($popularLinks as $link)
+            <li>
+                <a href="{{ route('show_link', ['url' => $link]) }}">{{ $link }}</a>
+            </li>
+        @endforeach
         </ul>
     </div>
+    @endif
 @endsection

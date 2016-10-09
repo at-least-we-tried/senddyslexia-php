@@ -16,7 +16,7 @@ use App\ScrapeSite;
 
 Route::get('/', ['uses' => 'PageController@home', 'as' => 'home']);
 Route::get('/try', ['uses' => 'PageController@try_dyslexia', 'as' => 'try_dyslexia']);
-Route::get('/try/${url}', ['uses' => 'LinksController@show', 'as' => 'show_link']);
+Route::get('/try/{url}', ['uses' => 'LinksController@show', 'as' => 'show_link']);
 Route::post('links/store', 'LinksController@store');
 Route::get('/what', ['uses' => 'PageController@what', 'as' => 'what']);
 

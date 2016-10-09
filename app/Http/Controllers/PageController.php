@@ -15,7 +15,8 @@ class PageController extends Controller
 
     public function try_dyslexia()
     {
-        return view('try');
+        $popularLinks = ['svt.se', 'expressen.se', 'nytimes.com'];
+        return view('try', compact('popularLinks'));
     }
 
     public function what()
